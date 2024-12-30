@@ -45,15 +45,15 @@ function Users() {
               <th className="py-2 px-4 border-b border-gray-200 text-left">
                 NO
               </th>
-              <th className="py-2 px-4 border-b border-gray-200 text-left">
+              {/* <th className="py-2 px-4 border-b border-gray-200 text-left">
                 Name
-              </th>
+              </th> */}
               <th className="py-2 px-4 border-b border-gray-200 text-left">
                 Email
               </th>
-              <th className="py-2 px-4 border-b border-gray-200 text-left">
+              {/* <th className="py-2 px-4 border-b border-gray-200 text-left">
                 Role
-              </th>
+              </th> */}
               <th className="py-2 px-4 border-b border-gray-200 text-left">
                 Password
               </th>
@@ -68,15 +68,15 @@ function Users() {
                 <td className="py-2 px-4 border-b border-gray-200">
                   {(currentPage - 1) * rowsPerPage + index + 1}
                 </td>
-                <td className="py-2 px-4 border-b border-gray-200">
+                {/* <td className="py-2 px-4 border-b border-gray-200">
                   {item.Name}
-                </td>
+                </td> */}
                 <td className="py-2 px-4 border-b border-gray-200">
                   {item.Email}
                 </td>
-                <td className="py-2 px-4 border-b border-gray-200">
+                {/* <td className="py-2 px-4 border-b border-gray-200">
                   {item.Roles}
-                </td>
+                </td> */}
                 <td className="py-2 px-4 border-b border-gray-200">
                   {item.Password}
                 </td>

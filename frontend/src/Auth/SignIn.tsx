@@ -1,28 +1,15 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
-import { auth } from "../firebase-config"; // Import Firebase auth
-import { signInWithEmailAndPassword } from "firebase/auth"; // Import Firebase sign-in method
+import { Link } from "react-router-dom";
+import HandleSignIn from "./HandleSignIn";
 
 function SignIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(""); // State for error message
-  const navigate = useNavigate(); // Hook for navigation
-
-  // Handle login form submission
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      await signInWithEmailAndPassword(auth, email, password);
-      navigate("/Admin"); // Chuyển hướng sau khi đăng nhập thành công
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError("Lỗi");
-      }
-    }
-  };
+  const {
+    email,
+    password,
+    error,
+    handleSignIn,
+    setEmail,
+    setPassword,
+  } = HandleSignIn();
 
   return (
     <div className="min-h-screen flex items-center justify-center">
@@ -34,7 +21,7 @@ function SignIn() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form method="POST" onSubmit={handleLogin} className="space-y-6">
+          <form method="POST" onSubmit={handleSignIn} className="space-y-6">
             <div>
               <label
                 htmlFor="email"
@@ -87,7 +74,11 @@ function SignIn() {
               </div>
             </div>
 
-            {error && <div className="text-sm text-red-600">{error}</div>}
+            {error && (
+              <div className="text-sm text-red-600">
+                Wrong Email Or Password
+              </div>
+            )}
 
             <div>
               <button

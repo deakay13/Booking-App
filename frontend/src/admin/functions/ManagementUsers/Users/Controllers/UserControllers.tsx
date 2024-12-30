@@ -4,15 +4,15 @@ import { db } from "../../../../../firebase-config";
 
 export interface Users {
   ID: number;
-  Name: string;
+  // Name: string;
   Email: string;
-  Roles: string;
+  // Roles: string;
   Password: string;
   Date: Timestamp;
 }
 
 export default function UserControllers() {
-const [data, setData] = useState<Users[]>([]);
+  const [data, setData] = useState<Users[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
 
@@ -22,11 +22,11 @@ const [data, setData] = useState<Users[]>([]);
         const querySnapshot = await getDocs(collection(db, "Users"));
         const usersData = querySnapshot.docs.map((doc, index) => ({
           ID: index + 1,
-          Name: doc.data().Name,
-          Email: doc.data().Email,
-          Roles: doc.data().Roles,
-          Password: doc.data().Password,
-          Date: doc.data().Date,
+          // Name: doc.data().Name,
+          Email: doc.data().email,
+          // Roles: doc.data().Roles,
+          Password: doc.data().password,
+          Date: doc.data().ate,
         }));
         setData(usersData);
       } catch (error) {
@@ -54,7 +54,7 @@ const [data, setData] = useState<Users[]>([]);
       data,
       currentData,
       currentPage,
-        totalPages,
+      totalPages,
       rowsPerPage,
       handleNext,
       handlePrev,

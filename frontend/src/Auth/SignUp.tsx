@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
+import HandleSignUp from "./HandleSignUp";
 
 function Resignter() {
+  const {
+    email,
+    password,
+    confirmpassword,
+    error,
+    handleSubmit,
+    setEmail,
+    setPassword,
+    setConfirmPassword,
+  } = HandleSignUp();
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="w-full max-w-sm p-8 bg-white rounded-lg shadow-md">
@@ -11,7 +22,11 @@ function Resignter() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form action="#" method="POST" className="space-y-6">
+          <form
+            method="POST"
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >
             <div>
               <label
                 htmlFor="email"
@@ -26,6 +41,8 @@ function Resignter() {
                   type="email"
                   required
                   autoComplete="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                 />
               </div>
@@ -47,6 +64,8 @@ function Resignter() {
                   type="password"
                   required
                   autoComplete="current-password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                 />
               </div>
@@ -55,7 +74,7 @@ function Resignter() {
             <div>
               <div className="flex items-center justify-between">
                 <label
-                  htmlFor="password"
+                  htmlFor="Re-password"
                   className="block text-sm font-medium text-gray-900"
                 >
                   Re-Password
@@ -63,11 +82,13 @@ function Resignter() {
               </div>
               <div className="mt-2">
                 <input
-                  id="password"
+                  id="Re-password"
                   name="password"
                   type="password"
                   required
                   autoComplete="current-password"
+                  value={confirmpassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   className="block w-full rounded-md bg-white px-3 py-2 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm"
                 />
               </div>
@@ -82,9 +103,11 @@ function Resignter() {
               </button>
             </div>
           </form>
-
+          {error && (
+            <div className="text-sm text-red-600">{error}</div>
+          )}
           <p className="mt-10 text-center text-sm text-gray-500">
-            You already have an account?{" "}
+            You already have an account?
             <Link
               to="/Home/SignIn"
               className="font-semibold text-indigo-600 hover:text-indigo-500"
