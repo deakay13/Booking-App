@@ -1,7 +1,7 @@
 import { useState} from "react";
 import { Link } from "react-router-dom";
 
-function HeaderHome() {
+export default function HeaderHome() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <header className="bg-gray-200 sticky top-0 z-20">
@@ -100,4 +100,3 @@ function HeaderHome() {
     </header>
   );
 }
-export default HeaderHome;

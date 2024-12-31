@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import HandleSignIn from "./HandleSignIn";
 
-function SignIn() {
+export default function SignIn() {
   const {
     email,
     password,
@@ -104,5 +104,3 @@ function SignIn() {
     </div>
   );
 }
-
-export default SignIn;

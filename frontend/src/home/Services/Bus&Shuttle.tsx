@@ -1,8 +1,7 @@
-function BusAndShuttle() {
+export default function BusAndShuttle() {
   return (
     <>
       
     </>
   );
 }
-export default BusAndShuttle;

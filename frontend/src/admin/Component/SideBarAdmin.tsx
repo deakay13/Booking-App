@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-function SideBarAdmin() {
+export default function SideBarAdmin() {
   const [isManagementOpen, setIsManagementOpen] = useState<boolean>(false);
   const [isServicesOpen, setIsServicesOpen] = useState<boolean>(false);
   const [isPostsOpen, setIsPostsOpen] = useState<boolean>(false);
@@ -435,5 +435,3 @@ function SideBarAdmin() {
       </aside>
   );
 }
-
-export default SideBarAdmin;

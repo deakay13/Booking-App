@@ -1,8 +1,8 @@
 
-function Flights() {
+export default function Flights() {
   return(
     <></>
   )
 
 }
-export default Flights;
+

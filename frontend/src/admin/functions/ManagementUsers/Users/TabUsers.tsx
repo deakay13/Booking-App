@@ -1,13 +1,14 @@
 import { useState } from "react";
 import Users from "./Users";
+import AddUser from "./AddUsers";
 
-const Tabs = () => {
+export default function Tabs(){
   const [activeTab, setActiveTab] = useState(0);
 
-  const tabs = ["List Users", "CRUD"];
+  const tabs = ["List Users", "Add User"];
 
   const content = [
-    <Users/>,<div>test</div>,
+    <Users/>,<AddUser/>,
   ];
 
   return (
@@ -33,4 +34,3 @@ const Tabs = () => {
   );
 };
 
-export default Tabs;

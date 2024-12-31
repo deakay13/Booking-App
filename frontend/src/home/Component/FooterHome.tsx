@@ -1,4 +1,4 @@
-function FooterHome() {
+export default function FooterHome() {
   return (
     <footer className="bg-gray-200">
       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
@@ -14,4 +14,4 @@ function FooterHome() {
     </footer>
   );
 }
-export default FooterHome;
+

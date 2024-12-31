@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-function Room() {
+export default function Room() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const scrollLeft = () => {
@@ -80,4 +80,4 @@ function Room() {
       </div>
   );
 }
-export default Room;
+

@@ -1,4 +1,3 @@
-function Hotels() {
+export default function Hotels() {
   return <div>hello Roles</div>;
 }
-export default Hotels;

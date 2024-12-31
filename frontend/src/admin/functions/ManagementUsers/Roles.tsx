@@ -1,6 +1,6 @@
 // import { Timestamp } from "firebase/firestore";
 
-function Users() {
+export default function Users() {
 
   return (
     <div className="container mx-auto p-4">
@@ -108,5 +108,3 @@ function Users() {
     </div>
   );
 }
-
-export default Users;

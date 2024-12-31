@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom"; // Hook dùng để điều hư�
 import { signOut } from "firebase/auth"; // Import phương thức signOut
 import { auth } from "../../firebase-config"; // Import config Firebase
 
-function HeaderAdmin() {
+export default function HeaderAdmin() {
   const navigate = useNavigate();
 
   // Xử lý đăng xuất
@@ -29,4 +29,3 @@ function HeaderAdmin() {
   );
 }
 
-export default HeaderAdmin;

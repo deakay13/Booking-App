@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { collection, getDocs, Timestamp } from "firebase/firestore";
+import { collection, getDocs} from "firebase/firestore";
 import { db } from "../../../../../firebase-config";
 
 export interface Users {
@@ -8,10 +8,10 @@ export interface Users {
   Email: string;
   // Roles: string;
   Password: string;
-  Date: Timestamp;
+  Date: string;
 }
 
-export default function UserControllers() {
+export default function HandleListUsers() {
   const [data, setData] = useState<Users[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
@@ -23,10 +23,10 @@ export default function UserControllers() {
         const usersData = querySnapshot.docs.map((doc, index) => ({
           ID: index + 1,
           // Name: doc.data().Name,
-          Email: doc.data().email,
+          Email: doc.data().Email,
           // Roles: doc.data().Roles,
-          Password: doc.data().password,
-          Date: doc.data().ate,
+          Password: doc.data().Password,
+          Date: doc.data().Date,
         }));
         setData(usersData);
       } catch (error) {

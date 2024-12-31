@@ -8,10 +8,12 @@ pnpm-debug.log*
 lerna-debug.log*
 package-lock.json
 
+# files no push to github
 node_modules
 dist
 dist-ssr
 *.local
+.env 
 
 # Editor directories and files
 .vscode/*
@@ -23,3 +25,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+

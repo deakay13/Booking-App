@@ -12,7 +12,7 @@ import Flights from "./ManagementServices/Flights";
 import Hotels from "./ManagementServices/Hotels";
 import Rooms from "./ManagementServices/Rooms";
 
-function IndexFunctions() {
+export default function IndexFunctions() {
   return (
     <Routes>
       <Route path="/" element={<DashBoard />} />
@@ -30,4 +30,3 @@ function IndexFunctions() {
     </Routes>
   );
 }
-export default IndexFunctions;

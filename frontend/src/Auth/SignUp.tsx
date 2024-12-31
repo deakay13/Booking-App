@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import HandleSignUp from "./HandleSignUp";
 
-function Resignter() {
+export default function Resignter() {
   const {
     email,
     password,
@@ -120,4 +120,3 @@ function Resignter() {
     </div>
   );
 }
-export default Resignter;

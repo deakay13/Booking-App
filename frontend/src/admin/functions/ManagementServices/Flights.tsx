@@ -1,4 +1,3 @@
-function Flights() {
+export default function Flights() {
   return <div>helloo Roles</div>;
 }
-export default Flights;

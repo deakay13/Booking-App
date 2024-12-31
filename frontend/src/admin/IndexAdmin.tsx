@@ -2,7 +2,7 @@ import HeaderAdmin from "./Component/HeaderAdmin";
 import SidebarAdmin from "./Component/SideBarAdmin";
 import IndexFunctions from "./functions/Indexfunctions";
 
-function IndexAdmin() {
+export default function IndexAdmin() {
   return (
     <div className="flex h-full">
       <SidebarAdmin />
@@ -13,4 +13,3 @@ function IndexAdmin() {
     </div>
   );
 }
-export default IndexAdmin;

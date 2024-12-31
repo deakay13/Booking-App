@@ -1,7 +1,7 @@
-import { Timestamp } from "firebase/firestore";
-import UserControllers from "./Controllers/UserControllers";
+// import { Timestamp } from "firebase/firestore";
+import HandleListUser from "./Controllers/HandleListUser";
 
-function Users() {
+export default function Users() {
   const {
     currentData,
     currentPage,
@@ -9,7 +9,7 @@ function Users() {
     rowsPerPage,
     handleNext,
     handlePrev,
-  } = UserControllers();
+  } = HandleListUser();
 
   return (
     <div className="container mx-auto p-4">
@@ -81,9 +81,7 @@ function Users() {
                   {item.Password}
                 </td>
                 <td className="py-2 px-4 border-b border-gray-200">
-                  {item.Date instanceof Timestamp
-                    ? item.Date.toDate().toLocaleDateString()
-                    : ""}
+                  {item.Date}
                 </td>
               </tr>
             ))}
@@ -117,5 +115,3 @@ function Users() {
     </div>
   );
 }
-
-export default Users;

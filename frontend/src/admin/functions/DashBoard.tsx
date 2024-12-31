@@ -1,4 +1,4 @@
-function DashBoard() {
+export default function DashBoard() {
     return (
       <main className="p-6 flex-1 bg-gray-100">
         <h2 className="text-3xl font-semibold mb-4">Dashboard</h2>
@@ -19,4 +19,3 @@ function DashBoard() {
       </main>
     );
 }
-export default DashBoard;
